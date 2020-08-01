@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        Load();
     }
 
     // Update is called once per frame
@@ -30,25 +31,34 @@ public class GameController : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    public void BestScoreUpdate()
+    {
+        if(score > bestScore)
+        {
+            Save();
+        }
+    }
+
     public void Save()
     {
-        PlayerPrefs.SetInt("BestScore", bestScore);
+        PlayerPrefs.SetInt("BestScore", score);
     }
 
     public void Load()
     {
         bestScore = PlayerPrefs.GetInt("BestScore");
+        bestScoreText.text = "Best: " + bestScore;
     }
 
     private void CheckLife()
     {
-        if(life < 0)
+        if (life < 0)
         {
             ShowGameOver();
         }
     }
-     public void LifeTextUpdate()
-     {
+    public void LifeTextUpdate()
+    {
         switch (life)
         {
             case 3:
@@ -66,15 +76,17 @@ public class GameController : MonoBehaviour
             default:
                 break;
         }
-     }
+    }
 
     private void ShowGameOver()
     {
         gameOver.SetActive(true);
+        BestScoreUpdate();
     }
 
     public void RestartGame(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        Load();
     }
 }
