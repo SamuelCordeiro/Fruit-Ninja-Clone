@@ -7,12 +7,12 @@ public class Fruit : MonoBehaviour
 {
     public GameObject slicedFruitModel;
     public float force;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rig;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(transform.up * force, ForceMode2D.Impulse);
+        rig = GetComponent<Rigidbody2D>();
+        rig.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -27,12 +27,17 @@ public class Fruit : MonoBehaviour
         {
             GameController.instance.score += 1;
             GameController.instance.ScoreTextUpdate();
-
             Vector2 direction = (collider.transform.position - transform.position).normalized;
             Quaternion rotation = Quaternion.LookRotation(direction);
             GameObject slicedFruit = Instantiate(slicedFruitModel, transform.position, rotation);
             Destroy(slicedFruit,3f);
             Destroy(gameObject);
-        }    
+        }  
+
+        if(collider.tag == "Game Over")
+        {
+            GameController.instance.LifeTextUpdate();
+            GameController.instance.life--;
+        }  
     }
 }
