@@ -84,6 +84,12 @@ public class GameController : MonoBehaviour
         BestScoreUpdate();
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+        Load();
+    }
+
     public void RestartGame(string levelName)
     {
         SceneManager.LoadScene(levelName);
