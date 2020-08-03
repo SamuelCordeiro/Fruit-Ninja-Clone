@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FruitSpawner : MonoBehaviour
 {
-    public GameObject fruit;
+    //public GameObject fruit;
+    public GameObject[] items;
     public Transform[] spawnPoints;
-    public float minSpawnDelay = 0.1f;
+    public float minSpawnDelay = 0.01f;
     public float maxSpawnDelay = 0.8f;
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,9 @@ public class FruitSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f);
             int spawnIndex = Random.Range(0, spawnPoints.Length);
             Transform spawnPoint = spawnPoints[spawnIndex];
-            GameObject spawnedFruit = Instantiate(fruit, spawnPoint.position, spawnPoint.rotation);
-            Destroy(spawnedFruit, 5f);
+            int itemIndex = Random.Range(0, items.Length);
+            GameObject spawnedItem = Instantiate(items[itemIndex], spawnPoint.position, spawnPoint.rotation);
+            Destroy(spawnedItem, 5f);
         }
     }
 }
