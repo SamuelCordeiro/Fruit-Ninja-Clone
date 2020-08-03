@@ -6,11 +6,12 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     public GameObject slicedFruitModel;
-    public float force;
+    private float force;
     private Rigidbody2D rig;
     // Start is called before the first frame update
     void Start()
     {
+        force = Random.Range(10f, 14f);
         rig = GetComponent<Rigidbody2D>();
         rig.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
@@ -36,8 +37,8 @@ public class Fruit : MonoBehaviour
 
         if(collider.tag == "Game Over")
         {
-            GameController.instance.LifeTextUpdate();
             GameController.instance.life--;
+            GameController.instance.LifeTextUpdate();
         }  
     }
 }
