@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
 
     private void CheckLife()
     {
-        if (life < 0)
+        if (life == 0)
         {
             ShowGameOver();
         }
@@ -80,6 +80,9 @@ public class GameController : MonoBehaviour
 
     private void ShowGameOver()
     {
+        scoreText.enabled = false;
+        bestScoreText.enabled = false;
+        lifeText.enabled = false;
         gameOver.SetActive(true);
         BestScoreUpdate();
     }
