@@ -64,7 +64,7 @@ public class Blade : MonoBehaviour
         newPos = cam.ScreenToWorldPoint(Input.mousePosition);
         rig.position = newPos;
         velocity = (newPos - lastPos).magnitude * Time.deltaTime;
-        if(velocity > 0.001f)
+        if(velocity > 0.0001f)
         {
             circle.enabled = true;
         }
