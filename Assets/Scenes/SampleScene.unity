@@ -814,6 +814,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131857765}
   m_CullTransparentMesh: 0
+--- !u!1 &1203673519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1203673520}
+  m_Layer: 0
+  m_Name: Spawner (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1203673520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203673519}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: -0.98, y: -5.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1541123267}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!1 &1376639784
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +919,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376639784}
   m_CullTransparentMesh: 0
+--- !u!1 &1394585088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394585089}
+  m_Layer: 0
+  m_Name: Spawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1394585089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394585088}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: 1, y: -5.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1541123267}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
 --- !u!1 &1541123265
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,11 +978,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca75f2d8abbd60449e938ed38c0adea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruit: {fileID: 4864531924286389238, guid: bbee50788f5aa5a4dbda5d10528045a2, type: 3}
+  items:
+  - {fileID: 7026373522097162474, guid: 927d496919e6ce845b41590e0d419595, type: 3}
+  - {fileID: 4864531924286389238, guid: bbee50788f5aa5a4dbda5d10528045a2, type: 3}
+  - {fileID: 4864531924286389238, guid: bbee50788f5aa5a4dbda5d10528045a2, type: 3}
   spawnPoints:
-  - {fileID: 1986655824}
   - {fileID: 790433248}
   - {fileID: 233038429}
+  - {fileID: 1986655824}
+  - {fileID: 1394585089}
+  - {fileID: 1203673520}
   minSpawnDelay: 0.1
   maxSpawnDelay: 0.8
 --- !u!4 &1541123267
@@ -939,6 +1004,8 @@ Transform:
   - {fileID: 790433248}
   - {fileID: 233038429}
   - {fileID: 1986655824}
+  - {fileID: 1394585089}
+  - {fileID: 1203673520}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
