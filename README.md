@@ -1,9 +1,9 @@
 # Fruit-Ninja-Clone
 
-##About copyright
+## About copyright
 
 I declare that I have no monetary intention on this project and its development was only for studies.
 
 Assets provided by CSJ Academy.
 
-##About the project
+## About the project
