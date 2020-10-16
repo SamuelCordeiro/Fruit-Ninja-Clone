@@ -16,7 +16,7 @@ If you cut the watermelons, points are added to the record and if you fail to cu
 
 ![FruitNinja](https://user-images.githubusercontent.com/40183730/96322230-a2a09c80-0fee-11eb-8384-07aa411635a6.png)
 
-
+When losing three lives, you lose the game e the game over screen is presented with the option to restart the game.
 
 ![FruitNinja - GameOver](https://user-images.githubusercontent.com/40183730/96322276-cfed4a80-0fee-11eb-8e8e-500ad15173eb.png)
 
